@@ -9,54 +9,73 @@
 
 
 
-    .card1:hover {
+    /* .card1:hover {
       background:#63adf1;
       border:1px solid #63adf1;
     }
 
     .card1:hover .list-group-item{
       background:#63adf1 !important
+    } */
+
+    .card1{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .card1 img{
+      width: 100px;
+    }
+    .card1 .card-title{
+      font-size: 20px;
     }
 
-    .card2:hover {
-      background:#63adf1;
-      border:1px solid #63adf1;
-    }
-
-    .card2:hover .list-group-item{
-      background:#63adf1 !important
-    }
-
-
-    .card3:hover {
-      background:#63adf1;
-      border:1px solid #63adf1;
-    }
-
-    .card3:hover .list-group-item{
-      background:#63adf1 !important
-    }
-
-
-    .card:hover .btn-outline-dark{
-      color:white;
-      background:#63adf1;
+    .card1:hover{
+      margin-top:-10px;
+      transition: 0.3s;
+      box-shadow: 2px 1px 5px 1px black;
     }
 
 
+    .card2{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      height: auto;
+      max-height: 300px;
+      transition: 0.3s;
+      
+    }
+    .card2 img{
+      width: 200px;
+    }
+    .card2 .card-title{
+      font-size: 18px;
+    }
+    .card2:hover{
+      margin-top:-10px;
+      transition: 0.3s;
+      box-shadow: 2px 1px 5px 1px black;
+    }
 
 
 
 
 
 
-
-.nav-link{
-  color: white;
+.topnavbar{
+  width: 100%;
+  height: 30px;
+  background-image: linear-gradient(to right, #a9efde , #63adf1);
 }
-.active{
-  color: white;
-}
+
+
+
+
+
 
 .home-top-banner{
   width: 100%;
@@ -102,10 +121,11 @@
   width: 100%;
 }
 
-.h2-underline{
+.h2-with-underline{
   color: #63adf1;
   position: relative;
   width: auto;
+  padding: 5px 15px;
   display: inline-block;
 }
 .underline{
@@ -116,3 +136,45 @@
   height: 3px;
   background-color: red;
 }
+.underlineblue{
+  width: 100%;
+  position: absolute;
+  left:0;
+  bottom: 0;
+  border-radius: 0 0 5px 5px;
+  height: 4px;
+  background-color: #63adf1;
+}
+
+
+.trackingsection{
+  width: 100%;
+  height: 80px;
+  background-color: #63adf1;
+  border-radius: 5px;
+}
+
+.trackingsection p{
+  padding: 0;
+  padding-right: 40px;
+  margin: 0;
+  font-size: 20px;
+}
+
+.app{
+  width: 100%;
+  height: 700px;
+  /* max-height: 300px; */
+  /* position: relative; */
+  /* overflow: hidden; */
+}
+.app video{
+  width: 1000px;
+  /* position: absolute; */
+  height: 700px;
+}
+
+
+
+
+

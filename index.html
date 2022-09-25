@@ -10,36 +10,45 @@
   <body>
     <section>
       <header>
-        <nav class="navbar navbar-dark bg-dark sticky">
+          <div class="topnavbar"><div class="container"></div></div>
+
+        <nav class="navbar navbar-light fixed-top navbar-scroll">
             <div class="container">
               <a class="navbar-brand" href=""><img src="img/logo-light.png" alt=""></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: auto;">
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Link
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link">Link</a>
-                  </li>
-                </ul>                
+              <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><span class="navbar-toggler-icon"></span></button>
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                  <h5 id="offcanvasRightLabel">MENU</h5>
+                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: auto;">
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Link
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link">Link</a>
+                    </li>
+                  </ul>           
+                </div>
               </div>
+              <!-- <div class="collapse navbar-collapse" id="navbarScroll">
+                    
+              </div> -->
             </div>
           </nav>
         </header>
@@ -60,133 +69,98 @@
         <section>
           <div class="container-fluid">
             <div class="container">
-              <h2 class="text-uppercase h2-underline mb-4 mt-4">Habarlar<span class="underline"></span></h2>
-              <div class="row">
-                <div class="col-lg-6 col-md-6 mb-4">
-                  <div class="card card1 h-100">
-                    <div class="card-body">
-                      <h5 class="card-title">Basic</h5>
-                      <small class='text-muted'>Individual</small>
-                      <br><br>
-                      <span class="h2">$8</span>/month
-                      <br><br>
-                      <div class="d-grid my-3">
-                        <button class="btn btn-outline-dark btn-block">Select</button>
-                      </div>
-                      <ul>
-                        <li>Cras justo odio</li>
-                        <li>Dapibus ac facilisis in</li>
-                        <li>Vestibulum at eros</li>      
-                      </ul>
+              <h2 class="text-uppercase h2-with-underline mb-4 mt-5">Habarlar<span class="underline"></span></h2>
+              <div class="row d-flex justify-content-center">
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="card card2 h-100">
+                    <div class="card-body text-center p-3">
+                      <img src="img/d.jpeg" class="img-fluid" alt="">
+                      <h6 class="card-title mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</h6>
+                      <span class="underlineblue"></span>
                     </div>     
                   </div>
                 </div>
-                <div class="col-lg-6 col-md-6 mb-4">
-                  <div class="card card1 h-100">
-                    <div class="card-body">
-                      <h5 class="card-title">Basic</h5>
-                      <small class='text-muted'>Individual</small>
-                      <br><br>
-                      <span class="h2">$8</span>/month
-                      <br><br>
-                      <div class="d-grid my-3">
-                        <button class="btn btn-outline-dark btn-block">Select</button>
-                      </div>
-                      <ul>
-                        <li>Cras justo odio</li>
-                        <li>Dapibus ac facilisis in</li>
-                        <li>Vestibulum at eros</li>      
-                      </ul>
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="card card2 h-100">
+                    <div class="card-body text-center p-3">
+                      <img src="img/d.jpeg" class="img-fluid" alt="">
+                      <h6 class="card-title mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</h6>
+                      <span class="underlineblue"></span>
                     </div>     
                   </div>
                 </div>
               </div>    
+            </div>
             </div>
         </section>
         <section>
           <div class="container-fluid">
             <div class="container">
-              <h2 class="text-uppercase h2-underline mb-4 mt-4">Hyzmatlar<span class="underline"></span></h2>
+              <h2 class="text-uppercase h2-with-underline mb-4 mt-4">Hyzmatlar<span class="underline"></span></h2>
               <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4">
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
                   <div class="card card1 h-100">
-                    <div class="card-body">
-                      <h5 class="card-title">Basic</h5>
-                      <small class='text-muted'>Individual</small>
-                      <br><br>
-                      <span class="h2">$8</span>/month
-                      <br><br>
-                      <div class="d-grid my-3">
-                        <button class="btn btn-outline-dark btn-block">Select</button>
-                      </div>
-                      <ul>
-                        <li>Cras justo odio</li>
-                        <li>Dapibus ac facilisis in</li>
-                        <li>Vestibulum at eros</li>      
-                      </ul>
+                    <div class="card-body text-center">
+                      <img src="img/tickets.png" class="img-fluid" alt=""><span class="underlineblue"></span>
+                      <h5 class="card-title my-3">Poçta ýollamalary</h5>
                     </div>     
                   </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
                   <div class="card card1 h-100">
-                    <div class="card-body">
-                      <h5 class="card-title">Basic</h5>
-                      <small class='text-muted'>Individual</small>
-                      <br><br>
-                      <span class="h2">$8</span>/month
-                      <br><br>
-                      <div class="d-grid my-3">
-                        <button class="btn btn-outline-dark btn-block">Select</button>
-                      </div>
-                      <ul>
-                        <li>Cras justo odio</li>
-                        <li>Dapibus ac facilisis in</li>
-                        <li>Vestibulum at eros</li>      
-                      </ul>
+                    <div class="card-body text-center">
+                      <img src="img/stop-watch.png" class="img-fluid" alt=""><span class="underlineblue"></span>
+                      <h5 class="card-title my-3">Gazetler we žurnallar</h5>
                     </div>     
                   </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                  <div class="card card2 h-100">
-                    <div class="card-body">   
-                      <h5 class="card-title">Standard</h5>
-                      <small class='text-muted'>Small Business</small>
-                      <br><br>
-                      <span class="h2">$20</span>/month
-                      <br><br>
-                      <div class="d-grid my-3">
-                        <button class="btn btn-outline-dark btn-block">Select</button>
-                      </div>
-                      <ul>
-                        <li>Cras justo odio</li>
-                        <li>Dapibus ac facilisis in</li>
-                        <li>Vestibulum at eros</li>                
-                      </ul>
-                    </div>          
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                  <div class="card card1 h-100">
+                    <div class="card-body text-center">
+                      <img src="img/unknown.png" class="img-fluid" alt=""><span class="underlineblue"></span>
+                      <h5 class="card-title my-3">Çapar çagyrmak</h5>
+                    </div>     
                   </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                  <div class="card card3 h-100">
-                    <div class="card-body">               
-                      <h5 class="card-title">Premium</h5>
-                      <small class='text-muted'>Large Company</small>
-                      <br><br>
-                      <span class="h2">$40</span>/month
-                      <br><br>
-                      <div class="d-grid my-3">
-                        <button class="btn btn-outline-dark btn-block">Select</button>
-                      </div>
-                      <ul>
-                        <li>Cras justo odio</li>
-                        <li>Dapibus ac facilisis in</li>
-                        <li>Vestibulum at eros</li>              
-                      </ul>
-                    </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                  <div class="card card1 h-100">
+                    <div class="card-body text-center">
+                      <img src="img/railways.png" class="img-fluid" alt=""><span class="underlineblue"></span>
+                      <h5 class="card-title my-3">PÝGG Töleg</h5>
+                    </div>     
                   </div>
                 </div>
               </div>    
             </div>
+            </div>
         </section>
-    <script src="js/bootstrap.bundle.min.js"></script>
+        <section>
+          <div class="container">
+          <div class="text-center">
+            <img src="img/sorag-jogap.png" alt="">
+          </div>
+          <div class="trackingsection mt-4 d-flex justify-content-center align-items-center">
+            <p class="text-light">"Türkmenpoçta" poçta aragatnaşyk kompaniýasy"</p>
+            <div class="d-flex"><input type="text" placeholder="Track ID" class="form-control"><button type="button" class="btn btn-dark">G</button></div>
+          </div>
+        </div>
+        </section>
+        <section>
+            <div class="app text-center">
+              <video
+    title="Türkmenpoçta"
+    src="img/video.mp4"
+    autoplay="true"
+    muted="muted">
+              </video>
+            </div>
+        </section>
+        <section>
+         
+
+        </section>
   </body>
+  <script src="js/jquery.slim.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
 </html>
