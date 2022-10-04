@@ -21,10 +21,33 @@
 
 
 <!-- Trigger/Open The Modal -->
-<button id="myBtn" class="btn btn-primary">Şahsy otag</button>
+<button id="lichka" class="btn btn-primary">Şahsy otag</button>
+<button id="me" class="btn btn-primary" style="display: none;">ME</button>
+<button id="init" class="btn btn-primary" style="display: none;">Init</button>
+
 
 <!-- The Modal -->
-<div id="myModal" class="modal">
+<div id="memodal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+
+    <div class="w3-bar w3-black">
+      <!-- <button class="w3-bar-item w3-button mb-2 btn btn-primary" onclick="openCity('Login')">Login</button>
+      <button class="w3-bar-item w3-button mb-2 btn btn-primary" onclick="openCity('Register')">Register</button> -->
+      <span class="closeme" style="line-height: 0.5;float: right;">x</span>
+
+
+      
+    </div>
+    
+
+  </div>
+
+</div>
+
+<!-- The Modal -->
+<div id="lichkamodal" class="modal">
 
   <!-- Modal content -->
   <div class="modal-content">
@@ -32,7 +55,7 @@
     <div class="w3-bar w3-black">
       <button class="w3-bar-item w3-button mb-2 btn btn-primary" onclick="openCity('Login')">Login</button>
       <button class="w3-bar-item w3-button mb-2 btn btn-primary" onclick="openCity('Register')">Register</button>
-      <span class="close" style="line-height: 0.5;">x</span>
+      <span class="closelichka" style="line-height: 0.5;float: right;">x</span>
     </div>
 
     <div id="Login" class="login">
@@ -43,15 +66,15 @@
               <form>
                 <div class="form-outline mb-1">
                   <label class="form-label" for="form3Example3">Phone</label>
-                  <input type="phone" id="form3Example3" name="loginphone" class="form-control"
+                  <input type="text" name="loginphone" id="loginphone" class="form-control"
                     placeholder="Enter a valid phone" />
                 </div>
                 <div class="form-outline mb-1">
                   <label class="form-label" for="form3Example4">Password</label>
-                  <input type="password" id="form3Example4" name="loginpasswd" class="form-control"
+                  <input type="password" name="loginpasswd" id="loginpasswd" class="form-control"
                     placeholder="Enter password" />
                 </div>
-                <div class="text-center text-lg-start mt-1 pt-0">
+                <div class="text-center text-lg-start mt-1 pt-0" id="loginbtn">
                   <button type="button" class="btn btn-primary btn-lg"
                     style="padding-left: 2.5rem; padding-right: 2.5rem;" id="login">Login</button>
                 </div>
@@ -348,28 +371,43 @@
 
   <script>
     // Get the modal
-var modal = document.getElementById('myModal');
+var lichkamodal = document.getElementById('lichkamodal');
+var memodal = document.getElementById('memodal');
 
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+var lichka = document.getElementById("lichka");
+var me = document.getElementById("me");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var spanlichka = document.getElementsByClassName("closelichka")[0];
+var spanme = document.getElementsByClassName("closeme")[0];
 
 // When the user clicks on the button, open the modal
-btn.onclick = function() {
-    modal.style.display = "block";
+lichka.onclick = function() {
+    lichkamodal.style.display = "block";
+}
+
+me.onclick = function() {
+    memodal.style.display = "block";
 }
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
+spanlichka.onclick = function() {
+    lichkamodal.style.display = "none";
+}
+spanme.onclick = function() {
+    memodal.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (event.target == lichkamodal) {
+        lichkamodal.style.display = "none";
+        
+    }
+    if (event.target == memodal) {
+        memodal.style.display = "none";
+        
     }
 }
 
@@ -386,9 +424,81 @@ function openCity(cityName) {
 
 
 <script src="js/jquery.min.js"></script>
-<script>
+<script src="js//jquery.cookie.min.js"></script>
 
-$("#register").click(function(){
+<script>
+var smsid;
+var tokenn;
+
+
+// function getJSessionId(){
+//     var jsId = document.cookie.match(/JSESSIONID=[^;]+/);
+//     if(jsId != null) {
+//         if (jsId instanceof Array)
+//             jsId = jsId[0].substring(11);
+//         else
+//             jsId = jsId.substring(11);
+//     }
+//     return jsId;
+// }
+
+
+
+// $("#me").click(function(){
+
+//     $.ajax({
+//     url: 'https://dev.post.tm/v2/user/me',
+//     headers: {
+//       // 'Content-Type': 'application/json',
+//       'X-CSRFToken': tokenn,
+//     },
+//     type: "GET",
+//     dataType: "json",
+//     // data:{'csrftoken': $.cookie('csrftoken'), 'sessionid': $.cookie('sessionid')},
+//     success: function (result) {
+// console.log(result)
+//   // document.cookie = 'csrftoken='+result.detail.loc[0].sec;
+// // phonecheck4log(result.detail.loc[0].sec)
+
+//     },
+//     error: function () {
+//         console.log("error");
+//     }
+// });
+// });
+
+
+
+// $("#init").click(function(){
+
+// $.ajax({
+// url: 'https://dev.post.tm/v2/user/init',
+// headers: {
+//   'Content-Type': 'application/json',
+//   'X-CSRFToken': tokenn,
+// },
+// type: "GET",
+// // xhrFields: { withCredentials: true },
+// // dataType: "json",
+// // data:{'csrftoken': $.cookie('csrftoken'), 'sessionid': $.cookie('sessionid')},
+// success: function (result) {
+// console.log(result)
+// // document.cookie = 'csrftoken='+result.detail.loc[0].sec;
+// // phonecheck4log(result.detail.loc[0].sec)
+
+// },
+// error: function () {
+//     console.log("error");
+// }
+// });
+// });
+
+
+
+
+
+$(document).on('click', '#login', function(e){
+  e.stopImmediatePropagation();
     $.ajax({
     url: 'https://dev.post.tm/v2/auth/token',
     headers: {
@@ -396,37 +506,59 @@ $("#register").click(function(){
     },
     type: "GET",
     dataType: "json",
-    success: function (result) {
-  document.cookie = 'csrftoken='+result.detail.loc[0].sec;
-phonecheck(result.detail.loc[0].sec)
+    success: function (result, textStatus, jqXHR) {
+      // console.log(jqXHR.getAllResponseHeaders('Set-Cookie'))
+      // document.cookie = 'csrftoken='+result.detail.loc[0].sec;
+      // document.cookie = 'sessionid='+result.detail.loc[0].sec+';secure';
+      // getJSessionId()
+      phonecheck4log(e, result.detail.loc[0].sec)
 
     },
     error: function () {
         console.log("error");
     }
 });
+});
 
-var smsid;
-var tokenn;
-function phonecheck(token){
+
+function phonecheck4log(e, token){
+  e.stopImmediatePropagation();
   tokenn = token;
 $.ajax({
-    url: 'https://dev.post.tm/v2/auth/register',
+    url: 'https://dev.post.tm/v2/auth/login',
     headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded',
         'X-CSRFToken': token
     },
+    // xhrFields: { withCredentials: true },
     type: "POST",
     dataType: "json",
-    data:JSON.stringify({'phone': document.getElementById('regphone').value}),
-    success: function (result) {
-     var otp = document.getElementById('otp').value;
-     var passwd = document.getElementById('passwd').value;
-smsid = result.detail.loc[0].sms_id
-document.getElementById('otpform').style.display = 'block';
-document.getElementById('passwdform').style.display = 'block';
-document.getElementById('registerbtn').style.display = 'none';
-document.getElementById('confirmbtn').style.display = 'block';
+    data:{'username': document.getElementById('loginphone').value, 'password': document.getElementById('loginpasswd').value},
+    complete:function(event, xhr, settings){
+      console.log(xhr.getAllResponseHeaders())
+    },
+    statusCode: {
+      200: function(data){
+        var cookie = data.getAllResponseHeaders;
+        console.log(cookie)
+      }
+    },
+    success: function (result, textStatus, request) {
+      var cookie = request.getAllResponseHeaders();
+      console.log(cookie);
+  // alert(document.cookie)
+
+// console.log(result)
+
+// var value = $.cookie("sessionid");
+// console.log(value)
+
+
+      // console.log(result.detail.loc[0].csrftoken)
+      // document.cookie = 'csrftoken='+result.detail.loc[0].csrftoken;
+      document.getElementById('lichka').style.display = 'none';
+      document.getElementById('me').style.display = 'block';
+      document.getElementById('init').style.display = 'block';
         
     },
     error: function () {
@@ -438,31 +570,82 @@ document.getElementById('confirmbtn').style.display = 'block';
 
 
 
-$("#confirm").click(function(){
-  var otp = document.getElementById('otp').value
-  var passwd = document.getElementById('passwd').value
-  $.ajax({
-    url: 'https://dev.post.tm/v2/auth/confirm',
-    headers: {
-        'Content-Type': 'application/json',
-        'X-CSRFToken': tokenn
-    },
-    type: "POST",
-    dataType: "json",
-    data:JSON.stringify({'sms_id': smsid, 'code':otp, 'pwd':passwd}),
-    success: function (result) {
-     
-console.log(result)
+// $("#register").click(function(){
+//     $.ajax({
+//     url: 'https://dev.post.tm/v2/auth/token',
+//     headers: {
+//         'Content-Type': 'application/json',
+//     },
+//     type: "GET",
+//     dataType: "json",
+//     success: function (result) {
+//   document.cookie = 'csrftoken='+result.detail.loc[0].sec;
+// phonecheck4reg(result.detail.loc[0].sec)
+// console.log(result)
+//     },
+//     error: function () {
+//         console.log("error");
+//     }
+// });
+// });
 
-    },
-    error: function () {
-        console.log("error");
-    }
-});
 
-  })
+
+// function phonecheck4reg(token){
+//   tokenn = token;
+// $.ajax({
+//     url: 'https://dev.post.tm/v2/auth/register',
+//     headers: {
+//         'Content-Type': 'application/json',
+//         'X-CSRFToken': token
+//     },
+//     type: "POST",
+//     dataType: "json",
+//     data:JSON.stringify({'phone': document.getElementById('regphone').value}),
+//     success: function (result) {
+//      var otp = document.getElementById('otp').value;
+//      var passwd = document.getElementById('passwd').value;
+// smsid = result.detail.loc[0].sms_id
+// document.getElementById('otpform').style.display = 'block';
+// document.getElementById('passwdform').style.display = 'block';
+// document.getElementById('registerbtn').style.display = 'none';
+// document.getElementById('confirmbtn').style.display = 'block';
+// console.log(result)
+        
+//     },
+//     error: function () {
+//         console.log("error");
+//     }
+// });
+
+// }
+
+
+
+// $("#confirm").click(function(){
+//   var otp = document.getElementById('otp').value
+//   var passwd = document.getElementById('passwd').value
+//   $.ajax({
+//     url: 'https://dev.post.tm/v2/auth/confirm',
+//     headers: {
+//         'Content-Type': 'application/json',
+//         'X-CSRFToken': tokenn
+//     },
+//     type: "POST",
+//     dataType: "json",
+//     data:JSON.stringify({'sms_id': smsid, 'code':otp, 'pwd':passwd}),
+//     success: function (result) {
+//     //  console.log(result)
+// document.cookie = 'csrftoken='+result.detail.loc[0].csrftoken;
+// console.log(result)
+//     },
+//     error: function () {
+//         console.log("error");
+//     }
+// });
+
+// })
   
-});
 
 </script>
 
